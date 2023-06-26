@@ -1,0 +1,18 @@
+templates:
+  kvm-openjdk-7u51:
+    skip_login: False
+    login_user: ADMIN
+    login_endpoint: /cgi/login.cgi
+    allow_insecure_ssl: True
+    user_login_attribute_name: name
+    password_login_attribute_name: pwd
+    send_post_data_as_json: False
+    session_cookie_key: SessionCookie
+    download_endpoint: /cgi/url_redirect.cgi?url_name=ikvm&url_type=jwsk
+    java_version: 7u51
+    format_jnlp: False
+
+hosts:
+  mykvmhost:
+    based_on: kvm-openjdk-7u51
+    full_hostname: mykvmhost.org

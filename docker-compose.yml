@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ipmi-kvm:
+    image: lambq/ipmi-kvm:latest
+    privileged: true
+    env_file: .env
+    ports:
+      - 8000:8000/tcp
+    restart: always
+    volumes:
+      - /run/docker.sock:/var/run/docker.sock
+      - nojava-ipmi-kvmrc.yaml:/root/.nojava-ipmi-kvmrc.yaml
+      - /etc/hosts:/etc/hosts
